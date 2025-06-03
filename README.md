@@ -1,4 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏪 Cups Store - Laravel Graduation Project
+
+مشروع متجر أكواب تم تطويره باستخدام Laravel 10 يدعم اللغة العربية والإنجليزية، يحتوي على لوحة تحكم للإدارة، تقييمات المستخدمين، رفع صور، وتصنيفات الأكواب.
+
+## ⚙️ المتطلبات
+
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js & NPM (لـ Vite)
+
+## 📦 خطوات التنصيب
+
+```bash
+git clone https://github.com/yourusername/cups-store.git
+cd cups-store
+
+# تحميل الحزم
+composer install
+npm install
+
+# إعداد ملف البيئة
+cp .env.example .env
+
+# إنشاء مفتاح التطبيق
+php artisan key:generate
+
+# إعداد قاعدة البيانات
+php artisan migrate --seed
+
+# تشغيل السيرفر
+php artisan serve
+
+```
+## 🧑‍💼 حساب الأدمن
+البريد: admin@example.com
+
+كلمة المرور: Admin.123#
+
+## 📸 ميزات المشروع
+✅ نظام تسجيل الدخول وتسجيل حساب جديد للمستخدمين.
+🛍️ إدارة الأكواب (إضافة، تعديل، حذف) من خلال لوحة تحكم خاصة.
+🗂️ إدارة التصنيفات مع وجود تصنيف افتراضي لا يمكن حذفه (لتحويل الأكواب المرتبطة به عند حذف تصنيف آخر).
+🛒 سلة مشتريات ديناميكية يمكن للمستخدم إضافة الأكواب إليها وإدارتها قبل الطلب.
+📦 نظام إنشاء الطلبات وحفظها مع تفاصيل المستخدم والمحتويات.
+⭐ نظام تقييمات المستخدمين للأكواب.
+🌍 دعم لغتين: العربية والإنجليزية.
+📱 تصميم متجاوب ومتوافق مع جميع الشاشات باستخدام Bootstrap.
+
+## 🌐 اللغات
+العربية 
+الانجليزية
+
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +116,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->

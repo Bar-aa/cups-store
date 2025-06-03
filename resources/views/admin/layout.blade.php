@@ -12,6 +12,7 @@
         body {
             padding-top: 70px;
         }
+        
     </style>
 </head>
 <body>
@@ -32,30 +33,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('main.home') }}</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ route('cups.index') }}">{{ __('main.cups') }}</a></li>
-
-    @auth
-        @if(auth()->user()->role === 'admin')
-            <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('main.dashboard') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('main.dashboard') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('main.home') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('cups.index') }}">{{ __('main.cups') }}</a></li>
+       @auth
+            <a href="{{ route('profile') }}" class="nav-link">{{ __('main.profile') }}</a>
+            <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger me-2">{{ __('auth.logout') }}</button>
+            </form>
         @else
-            <li class="nav-item"><a class="nav-link" href="{{ route('cart') }}">{{ __('main.cart') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ __('main.about') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ __('main.contact') }}</a></li>
-        @endif
-
-        <li class="nav-item"><a class="nav-link" href="{{ route('profile') }}">{{ __('main.profile') }}</a></li>
-        <form method="POST" action="{{ route('logout') }}" class="d-inline">
-            @csrf
-            <button type="submit" class="btn btn-outline-danger me-2">{{ __('auth.logout') }}</button>
-        </form>
-    @else
-        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ __('main.about') }}</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ __('main.contact') }}</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a></li>
-    @endauth
-</ul>
-
+            <a href="{{ route('register') }}" class="nav-link">{{ __('auth.register') }}</a>
+        @endauth
+      </ul>
     </div>
   </div>
 </nav>

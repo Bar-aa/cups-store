@@ -20,4 +20,5 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Cup::class);
     }
+    
 }

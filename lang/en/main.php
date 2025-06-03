@@ -9,4 +9,5 @@ return [
     'about' => 'About Us',
     'contact' => 'Contact Us',
     'profile' => 'Profile',
+    'dashboard'=>'Dashboard',
 ];

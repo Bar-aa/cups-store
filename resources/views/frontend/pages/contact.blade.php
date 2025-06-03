@@ -1,30 +1,35 @@
 @extends('frontend.layout')
 
-@section('title', 'اتصل بنا')
+@section('title', __('contact.title'))
 
 @section('content')
 <div class="container my-5">
-    <h1 class="mb-4">اتصل بنا</h1>
-    <p>هل لديك أي استفسار أو ملاحظات؟ يسعدنا تواصلك معنا.</p>
+    <h1 class="mb-4 text-center">{{ __('contact.heading') }}</h1>
+    <p class="text-center">{{ __('contact.subheading') }}</p>
 
-    <form method="POST" action="#">
-        @csrf
-        <div class="mb-3">
-            <label for="name" class="form-label">الاسم</label>
-            <input type="text" class="form-control" id="name" required>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="POST" action="#">
+                @csrf
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">{{ __('contact.name') }}</label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">{{ __('contact.email') }}</label>
+                    <input type="email" name="email" class="form-control" id="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">{{ __('contact.message') }}</label>
+                    <textarea name="message" class="form-control" id="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">{{ __('contact.send') }}</button>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">البريد الإلكتروني</label>
-            <input type="email" class="form-control" id="email" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="message" class="form-label">الرسالة</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">إرسال</button>
-    </form>
+    </div>
 </div>
 @endsection

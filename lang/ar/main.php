@@ -9,4 +9,5 @@ return [
     'about' => 'من نحن',
     'contact' => 'اتصل بنا',
     'profile' => 'الملف الشخصي',
+    'dashboard'=>'لوحة التحكم',
 ];

@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
     {
         Category::truncate(); // تفرغ الجدول لو فيه داتا
 
-        $categories = ['كلاسيكي', 'حراري', 'سيراميك'];
+        $categories = ['Default'];
 
         foreach ($categories as $name) {
             Category::create(['name' => $name]);

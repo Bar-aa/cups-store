@@ -2,12 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CupController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Frontend\ReviewController;
+use Illuminate\Support\Facades\Session;
+
+// ✅ تغيير اللغة
+Route::get('/locale/switch', function () {
+    $locale = request('lang');
+    $availableLocales = ['en', 'ar']; // تأكد أن هذه القيم تناسب موقعك
+
+    if (in_array($locale, $availableLocales)) {
+        Session::put('locale', $locale);
+    }
+
+    return redirect()->back();
+})->name('locale.switch');
 
 // ✅ الصفحة الرئيسية
 Route::get('/', [HomeController::class, 'index'])->name('home');
